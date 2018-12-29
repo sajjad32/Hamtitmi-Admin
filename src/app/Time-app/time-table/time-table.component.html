@@ -1,0 +1,49 @@
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#reserveTableModal" (click)="createReservationTable()">
+  مشاهده سانس ها
+</button>
+
+<div class="modal fade" id="reserveTableModal" tabindex="-1" role="dialog" aria-hidden='true'>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>جدول رزرواسیون سالن هلال احمر</h3>
+        <div class="currentDate">
+          امروز:
+          {{currentDate}}
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="reserveTable ">
+          <div class="reservePage active">
+            <div class="row headRow">
+              <div class="col headCol"></div>
+              <div class="col" *ngFor="let day of days">
+                {{day.name}}
+                <span> {{day.date}} </span>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="row">
+              <div class="col headCol">00:00 تا 01:30</div>
+              <app-time [time]="times[0]"></app-time>
+              <app-time [time]="times[0]"></app-time>
+              <app-time [time]="times[0]"></app-time>
+              <app-time [time]="times[0]"></app-time>
+              <app-time [time]="times[0]"></app-time>
+              <app-time [time]="times[0]"></app-time>
+              <app-time [time]="times[0]"></app-time>
+              <!--<div class="col late pastDate" data-dayid="35" data-timeid="440" data-price="80000" data-time="440" data-day="7" data-start="1" data-end="7" data-date="1397/10/7">تاریخ گذشته</div>-->
+              <div class="clear"></div>
+            </div>
+            <div class="buttons">
+              <div class="comeToday" (click)="comeToday()">بازگشت به امروز</div>
+              <div class="btn next" (click)="goToNextWeek()">هفته بعد <i class="fa fa-angle-left"></i></div>
+              <div class="btn prev" (click)="goToPrevWeek()"><i class="fa fa-angle-right"></i> هفته قبل</div>
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

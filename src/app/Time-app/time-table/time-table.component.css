@@ -1,0 +1,144 @@
+app-time {
+  width: 12.5%;
+}
+.modal-content {
+  background: #fcfcfc;;
+}
+.modal-header {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.modal-header h3 {
+  padding: 5px 5px 10px;
+  font-size: 18px;
+  margin-bottom: 0;
+  font-weight: 400;
+  letter-spacing: -1.5px;
+}
+.currentDate {
+  position: absolute;
+  left: 25px;
+  top: 25px;
+  font: 14px yekanlight;
+}
+.clear {
+  clear: both;
+  height: 0;
+}
+.col {
+  flex-basis: auto !important;
+}
+.reserveTable {
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #eee;
+  margin-bottom: 5px;
+  font-size: 13px;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  box-shadow: 0 1px 10px 0 rgba(0,0,0,.02);
+  -moz-box-shadow: 0 1px 10px 0 rgba(0,0,0,.02);
+  -webkit-box-shadow: 0 1px 10px 0 rgba(0,0,0,.02);
+  -o-box-shadow: 0 1px 10px 0 rgba(0,0,0,.02);
+  -ms-box-shadow: 0 1px 10px 0 rgba(0,0,0,.02);
+}
+.reserveTable .reservePage.active {
+  display: block;
+}
+.reserveTable .row {
+  margin: auto 0;
+  border-bottom: 1px solid #fff;
+}
+.reserveTable .row.headRow {
+  border-bottom-color: #66c000;
+}
+.reserveTable .row .col {
+  float: right;
+  width: 12.5%;
+  height: 60px;
+  line-height: 60px;
+  white-space: nowrap;
+  text-align: center;
+  padding: 0;
+  position: relative;
+  transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -webkit-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+}
+.reserveTable .row .col span {
+  font-size: 10px;
+  color: #999;
+  font-weight: 400;
+}
+.reserveTable .row.headRow .col {
+  color: #66c000;
+  background: 0 0;
+  cursor: default;
+  font-weight: 400;
+}
+.reserveTable .row .col.headCol {
+  color: #66c000;
+  border-left: 1px solid #66c000;
+  background: 0 0;
+  cursor: default;
+  font-weight: 400;
+}
+.reserveTable .buttons {
+  font-size: 16px;
+  position: relative;
+}
+.reserveTable .buttons .comeToday {
+  width: 150px;
+  text-align: center;
+  padding: 5px 0;
+  position: absolute;
+  top: 12px;
+  right: calc(50% - 75px);
+  cursor: pointer;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  box-shadow: 0 1px 10px 0 rgba(0,0,0,.02);
+  -moz-box-shadow: 0 1px 10px 0 rgba(0,0,0,.02);
+  -webkit-box-shadow: 0 1px 10px 0 rgba(0,0,0,.02);
+  -o-box-shadow: 0 1px 10px 0 rgba(0,0,0,.02);
+  -ms-box-shadow: 0 1px 10px 0 rgba(0,0,0,.02);
+}
+.reserveTable .buttons .btn {
+  cursor: pointer;
+  padding: 20px;
+  transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -webkit-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+}
+.reserveTable .buttons .btn:hover {
+  color: #37cc75;
+}
+.reserveTable .buttons .btn.next {
+  float: left;
+}
+.reserveTable .buttons .btn.prev {
+  float: right;
+}
+.reserveTable .buttons .btn i {
+  position: relative;
+  top: 1px;
+  padding: 0 5px;
+  cursor: pointer;
+}
+@media (min-width: 1200px) {
+  .modal-dialog {
+    max-width: 900px;
+    margin: 1.75rem auto;
+  }
+}

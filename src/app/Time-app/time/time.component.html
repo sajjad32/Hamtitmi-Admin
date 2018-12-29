@@ -1,0 +1,9 @@
+<div class="col time-box" [ngClass]="{'disable': box_state[0], 'not-reserved': box_state[1], 'reserved': box_state[2]}">
+    <b class="time-price" *ngIf="box_state[0]">غیر فعال</b>
+    <b class="time-price" *ngIf="!box_state[0]">{{time.price}}</b>
+    <ul class="time-function-icons">
+      <li *ngIf="!box_state[0] && box_state[1]"><i class="fa fa-edit"></i></li>
+      <li *ngIf="box_state[0]" (click)="enableTime()"><i class="fa fa-play"></i></li>
+      <li *ngIf="!box_state[0] && box_state[1]" (click)="disableTime()"><i class="fa fa-power-off"></i></li>
+    </ul>
+</div>
