@@ -10,12 +10,24 @@ import { Time } from '../Time';
 export class TimeComponent implements OnInit {
 
   @Input() time: Time;
-  box_state = [true, false, false]; // disable , not-reserved, reserved
+  box_state = {'enable': false, 'reserved': false};
 
   constructor(private timeService: TimeService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.intiTime();
+  }
 
+  intiTime() {
+    this.box_state['enable'] = this.time.enable;
+    if (this.time.state === 'reserved') {
+      this.box_state['reserved'] = true;
+    } else if (this.time.state === 'not-reserved') {
+      this.box_state['reserved'] = false;
+    } else {
+      this.box_state['reserved'] = null;
+    }
+  }
   enableTime() {
     this.timeService.enableTime(this.time);
   }

@@ -24,7 +24,7 @@ export class TimeTableComponent implements OnInit {
     {'name': 'جمعه', 'date': ''},
   ];
   times: Time[] = [
-    {place_id: 0, date: '1397-12-12', time: '14:00', price: 50000, state: 'reserved', enable: false}
+    {place_id: 0, date: '1397-12-12', time: '14:00', price: 50000, state: '', enable: false}
   ];
   hours: [
     '14 تا 15:30',

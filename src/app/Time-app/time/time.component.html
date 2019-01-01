@@ -1,9 +1,11 @@
-<div class="col time-box" [ngClass]="{'disable': box_state[0], 'not-reserved': box_state[1], 'reserved': box_state[2]}">
-    <b class="time-price" *ngIf="box_state[0]">غیر فعال</b>
-    <b class="time-price" *ngIf="!box_state[0]">{{time.price}}</b>
+<div class="col time-box" [ngClass]="{'disable': !box_state['enable'], 'not-reserved': box_state['enable'] && !box_state['reserved'], 'reserved': box_state['enable'] && box_state['reserved']}">
+    <b class="time-price" *ngIf="!box_state['enable']">غیر فعال</b>
+    <b class="time-price" *ngIf="box_state['enable']">
+      {{time.price}}
+    </b>
     <ul class="time-function-icons">
-      <li *ngIf="!box_state[0] && box_state[1]"><i class="fa fa-edit"></i></li>
-      <li *ngIf="box_state[0]" (click)="enableTime()"><i class="fa fa-play"></i></li>
-      <li *ngIf="!box_state[0] && box_state[1]" (click)="disableTime()"><i class="fa fa-power-off"></i></li>
+      <li *ngIf="box_state['enable'] && !box_state['reserved']"><i class="fa fa-edit"></i></li>
+      <li *ngIf="!box_state['enable']" (click)="enableTime()"><i class="fa fa-play"></i></li>
+      <li *ngIf="box_state['enable'] && !box_state['reserved']" (click)="disableTime()"><i class="fa fa-power-off"></i></li>
     </ul>
 </div>

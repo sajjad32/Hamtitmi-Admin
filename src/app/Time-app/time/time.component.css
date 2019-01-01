@@ -31,7 +31,6 @@
 .time-box.not-reserved {
   background: #ffebe4;
   color: #ed5d2a;
-  cursor: pointer;
 }
 .time-box.not-reserved:hover, .time-box.not-reserved.active {
   background: #ed5d2a;
@@ -40,7 +39,6 @@
 .time-box.reserved {
   color: #66c000;
   background: #ecffe6;
-  cursor: pointer;
   line-height: 60px;
 }
 .time-box.reserved:hover, .time-box.reserved.active {

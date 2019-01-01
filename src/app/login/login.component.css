@@ -1,6 +1,7 @@
 .background {
   height: 100%;
   z-index: -2;
+  position: absolute;
 }
 .background img {
   height: 100%;
@@ -34,13 +35,14 @@
 #login input {
   text-align: center;
   font-size: 12px;
-  color: #fff;
+  color: #444;
   border: 2px solid #fff;
   transition: 0.2s all ease-in-out;
 }
 #login input:focus {
   background: transparent;
   border-color: #3CB848;
+  color: #fff;
   box-shadow: none !important;
 }
 #login ::placeholder {color: #777;}
@@ -55,4 +57,8 @@
 .btn-green {
   background-color: #3CB848;
   color: #fff;
+}
+.btn-green:hover, .btn-green:active {
+  color: #fff;
+  background-color: #2a9e35;
 }
