@@ -11,6 +11,8 @@ body {
   direction: rtl;
   font-family: yekan;
   outline: 0;
+  text-align: right;
+  background-color: #f2f2f2;
 }
 .btn.focus, .btn:focus {
   box-shadow: none;

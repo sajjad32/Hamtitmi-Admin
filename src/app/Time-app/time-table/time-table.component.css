@@ -1,6 +1,9 @@
 app-time {
   width: 12.5%;
 }
+.show-times-btn {
+  font-size: 12px;
+}
 .modal-content {
   background: #fcfcfc;;
 }
@@ -144,7 +147,7 @@ app-time {
   padding: 0 5px;
   cursor: pointer;
 }
-@media (min-width: 1200px) {
+@media (min-width: 500px) {
   .modal-dialog {
     max-width: 900px;
     margin: 1.75rem auto;

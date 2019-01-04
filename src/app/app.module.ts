@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { TimeComponent } from './Time-app/time/time.component';
 import { TimeTableComponent } from './Time-app/time-table/time-table.component';
 import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { LoginComponent } from './login/login.component';
     TimeComponent,
     TimeTableComponent,
     LoginComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
