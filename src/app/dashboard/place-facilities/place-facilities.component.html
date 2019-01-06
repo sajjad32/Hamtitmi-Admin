@@ -1,0 +1,17 @@
+<div id="tasker" class="tasker">
+  <div id="tasker-header" class="tasker-header">
+    <input type="text" id="input-task" placeholder="افزودن به امکانات" autocomplete="off" [(ngModel)]="facility_text">
+    <button id="add-task-btn" (click)="addFacility(place_id)">
+      <i class="fa fa-fw fa-plus"></i>
+    </button>
+  </div>
+  <div class="tasker-body">
+    <ul id="tasks">
+      <li class="task" *ngFor="let item of facility">
+        {{item.text | slice:0:20}}<span *ngIf="item.text.length > 20">...</span>
+        <button class="trash" (click)="removeFacility(place_id, item.id)"><i class="fa fa-trash"></i></button>
+        <button class="edit"><i class="fa fa-edit"></i></button>
+      </li>
+    </ul>
+  </div>
+</div>

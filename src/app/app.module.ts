@@ -9,6 +9,8 @@ import { TimeComponent } from './Time-app/time/time.component';
 import { TimeTableComponent } from './Time-app/time-table/time-table.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PlaceAlbumComponent } from './dashboard/place-album/place-album.component';
+import { PlaceFacilitiesComponent } from './dashboard/place-facilities/place-facilities.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     TimeTableComponent,
     LoginComponent,
     DashboardComponent,
+    PlaceAlbumComponent,
+    PlaceFacilitiesComponent,
   ],
   imports: [
     BrowserModule,

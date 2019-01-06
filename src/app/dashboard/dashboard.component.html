@@ -17,7 +17,6 @@
             <div class="base-price">قیمت پایه : 50000</div>
           </div>
         </div>
-
       </div>
       <div class="col-md-6">
 
@@ -26,51 +25,10 @@
     <div class="divider" style="height: 60px; width: 100%;"></div>
     <div class="row">
       <div class="col-md-4">
-        <div id="tasker" class="tasker">
-          <div id="tasker-header" class="tasker-header">
-            <input type="text" id="input-task" placeholder="افزودن به امکانات" autocomplete="off">
-            <button id="add-task-btn"><i class="fa fa-fw fa-plus"></i>
-            </button>
-          </div>
-          <div class="tasker-body">
-            <ul id="tasks">
-              <li class="task">
-                مجهز به سیستم گرمایشی
-                <button class="trash"><i class="fa fa-trash"></i></button>
-                <button class="edit"><i class="fa fa-edit"></i></button>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <app-place-facilities [place_id]="place_id"></app-place-facilities>
       </div>
       <div class="col-md-8">
-        <div class="container album-container">
-          <div class="album">
-            <div class="row">
-              <div class="col-sm-6 col-md-4">
-                <a class="imgbox">
-                  <img src="assets/img/bridge.jpg" alt="Bridge">
-                </a>
-              </div>
-              <div class="col-sm-6 col-md-4">
-                <a class="imgbox">
-                  <img src="assets/img/tunnel.jpg" alt="Tunnel">
-                </a>
-              </div>
-              <div class="col-sm-6 col-md-4">
-                <a class="imgbox">
-                  <img src="assets/img/park.jpg" alt="Park">
-                </a>
-              </div>
-              <div class="col-sm-6 col-md-4">
-                <div class="imgbox add-image">
-                  <input type="file" name="image1" id="image1" accept=".gif, .jpg, .png" />
-                  <i class="fa fa-plus"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <app-place-album></app-place-album>
       </div>
     </div>
   </div>
