@@ -31,8 +31,6 @@
               [imageChangedEvent]="imageChangedEvent"
               [maintainAspectRatio]="true"
               [aspectRatio]="4 / 3"
-              [resizeToWidth]="128"
-              [cropperMinWidth]="128"
               [onlyScaleDown]="true"
               [roundCropper]="false"
               format="png"
@@ -45,7 +43,7 @@
               [style.display]="showCropper ? null : 'none'"
             ></image-cropper>
           </div>
-          <button class="btn btn-success" *ngIf="imageChangedEvent">بارگذاری</button>
+          <button class="btn btn-success" *ngIf="imageChangedEvent" (click)="uploadImage()">بارگذاری</button>
         </form>
 
 
@@ -53,3 +51,6 @@
     </div>
   </div>
 </div>
+
+
+<notifier-container></notifier-container>

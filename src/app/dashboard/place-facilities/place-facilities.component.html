@@ -8,7 +8,7 @@
   <div class="tasker-body">
     <ul id="tasks">
       <li class="task" *ngFor="let item of facilities">
-        {{item.text | slice:0:20}}<span *ngIf="item.text.length > 20">...</span>
+        {{item.text | slice:0:25}}<span *ngIf="item.text.length > 25">...</span>
         <button class="trash" (click)="removeFacility(place_id, item.id)"><i class="fa fa-trash"></i></button>
         <button class="edit" data-toggle="modal" data-target="#editFacilityModal" (click)="loadFacility(item)"><i class="fa fa-edit"></i></button>
       </li>

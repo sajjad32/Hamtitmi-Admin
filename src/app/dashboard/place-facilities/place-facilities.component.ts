@@ -29,14 +29,14 @@ export class PlaceFacilitiesComponent implements OnInit {
   addFacility(place_id: number) {
     // this.facilityService.addFacility(place_id, facility);
     if (this.facility_text !== '') {
-      this.facility.push({'id': 3, 'text': this.facility_text});
+      this.facilities.push({'id': 3, 'text': this.facility_text});
       this.facility_text = '';
     }
   }
 
   removeFacility(place_id: number, facility_id: number) {
     // this.facilityService.removeFacility(place_id, facility_id);
-    this.facility.pop();
+    this.facilities.pop();
   }
 
   loadFacility(facility) {

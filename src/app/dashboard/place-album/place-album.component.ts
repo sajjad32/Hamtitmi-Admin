@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import { AlbumService } from './album.service';
 import {ImageCroppedEvent, ImageCropperComponent} from 'ngx-image-cropper';
+import { NotifierService } from 'angular-notifier';
 
 @Component({
   selector: 'app-place-album',
@@ -9,12 +10,15 @@ import {ImageCroppedEvent, ImageCropperComponent} from 'ngx-image-cropper';
 })
 export class PlaceAlbumComponent implements OnInit {
 
-  constructor(private albumService: AlbumService) { }
-
   images = [];
   imageChangedEvent: any = '';
   croppedImage: any = '';
   showCropper = false;
+  private readonly notifier: NotifierService;
+
+  constructor(private albumService: AlbumService, notifierService: NotifierService) {
+    this.notifier = notifierService;
+  }
 
   @ViewChild(ImageCropperComponent) imageCropper: ImageCropperComponent;
 
@@ -43,5 +47,9 @@ export class PlaceAlbumComponent implements OnInit {
   }
   loadImageFailed () {
     console.log('Load failed');
+  }
+  uploadImage() {
+    console.log(this.croppedImage);
+    this.notifier.notify( 'success', 'تصویر با موفقیت بارگذاری شد' );
   }
 }

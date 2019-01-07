@@ -4,6 +4,7 @@ import { DpDatePickerModule } from 'ng2-jalali-date-picker';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ImageCropperModule } from 'ngx-image-cropper';
+import { NotifierModule } from 'angular-notifier';
 
 import { AppComponent } from './app.component';
 import { TimeComponent } from './Time-app/time/time.component';
@@ -29,6 +30,19 @@ import { PlaceFacilitiesComponent } from './dashboard/place-facilities/place-fac
     DpDatePickerModule,
     FormsModule,
     ImageCropperModule,
+    NotifierModule.withConfig( {
+      position: {
+        horizontal: {
+          position: 'right',
+          distance: 12
+        },
+        vertical: {
+          position: 'top',
+          distance: 12,
+          gap: 10
+        }
+      }
+    } )
   ],
   providers: [],
   bootstrap: [AppComponent]
