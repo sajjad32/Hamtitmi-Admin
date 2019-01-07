@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { FacilityService } from './facility.service';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-place-facilities',
@@ -9,11 +10,12 @@ import { FacilityService } from './facility.service';
 export class PlaceFacilitiesComponent implements OnInit {
 
   @Input() place_id;
-  facility = [
+  facilities = [
     {'id': 1, 'text': 'مجهز به سیتسم گرمایشی'},
     {'id': 2, 'text': 'پارکینگ اختصاصی دارد'}
   ];
   facility_text = '';
+  facility: any = '';
   constructor(private facilityService: FacilityService) { }
 
   ngOnInit() {
@@ -37,8 +39,17 @@ export class PlaceFacilitiesComponent implements OnInit {
     this.facility.pop();
   }
 
-  updateFacility() {
+  loadFacility(facility) {
+    this.facility = facility;
+  }
 
+  editFacility(form: NgForm) {
+    this.updateFacility(form);
+  }
+
+  updateFacility(form: NgForm) {
+    const a = form.value;
+    console.log(a);
   }
 
 }

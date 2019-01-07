@@ -81,3 +81,13 @@
 .tasker-body .task button:hover .fa-edit {
   color: #0069d9;
 }
+
+.input-group-prepend {
+  margin-left: -1px;
+}
+.input-group>.input-group-prepend>.input-group-text {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+.input-group>.form-control {
+  border-radius: 0.25rem 0 0 0.25rem;
+}

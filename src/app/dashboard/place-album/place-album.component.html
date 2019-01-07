@@ -1,26 +1,54 @@
 <div class="container album-container">
   <div class="album">
     <div class="row">
-      <div class="col-sm-6 col-md-4">
-        <a class="imgbox">
-          <img src="assets/img/bridge.jpg" alt="Bridge">
-        </a>
+      <div class="album-image col-sm-6 col-md-4">
+        <img src="assets/img/park.jpg" />
+        <div class="album-text col-sm-12 col-md-12">
+          <h3><i class="fa fa-trash"></i></h3>
+        </div>
       </div>
-      <div class="col-sm-6 col-md-4">
-        <a class="imgbox">
-          <img src="assets/img/tunnel.jpg" alt="Tunnel">
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <a class="imgbox">
-          <img src="assets/img/park.jpg" alt="Park">
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <div class="imgbox add-image">
-          <input type="file" name="image1" id="image1" accept=".gif, .jpg, .png" />
+      <div class="album-image col-sm-6 col-md-4">
+        <div class="add-image" data-toggle="modal" data-target="#addImageModal" (click)="cleanImageUpload()">
           <i class="fa fa-plus"></i>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="addImageModal" tabindex="-1" role="dialog" aria-hidden='true'>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>افزودن تصویر جدید</h5>
+      </div>
+      <div class="modal-body">
+        <form>
+          <input id="new-image" type="file" placeholder="Add profile picture" (change)="fileChangeEvent($event)" />
+          <label for="new-image">انتخاب کنید</label>
+          <div>
+            <image-cropper
+              [imageChangedEvent]="imageChangedEvent"
+              [maintainAspectRatio]="true"
+              [aspectRatio]="4 / 3"
+              [resizeToWidth]="128"
+              [cropperMinWidth]="128"
+              [onlyScaleDown]="true"
+              [roundCropper]="false"
+              format="png"
+              outputType="base64"
+              (imageCropped)="imageCropped($event)"
+              (imageLoaded)="imageLoaded()"
+              (cropperReady)="cropperReady()"
+              (loadImageFailed)="loadImageFailed()"
+              style="max-height: 54vh"
+              [style.display]="showCropper ? null : 'none'"
+            ></image-cropper>
+          </div>
+          <button class="btn btn-success" *ngIf="imageChangedEvent">بارگذاری</button>
+        </form>
+
+
       </div>
     </div>
   </div>

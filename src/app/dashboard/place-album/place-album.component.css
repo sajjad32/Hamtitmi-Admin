@@ -3,29 +3,11 @@
   color: #35373a;
   min-height: auto;
   border-radius: .3rem;
-  /*box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);*/
 }
 .album {
   padding: 40px;
 }
-.album .imgbox {
-  height: 140px;
-  border-radius: 4px;
-}
-.album .imgbox img {
-  width: 100%;
-  margin-bottom: 30px;
-  transition: 0.2s ease-in-out;
-  box-shadow: 0 2px 3px rgba(0,0,0,0.2);
-}
-.album .imgbox img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
-}
-.album img {
-  border-radius: 4px;
-}
-.album .imgbox.add-image {
+.album .album-image .add-image {
   background-color: transparent;
   text-align: center;
   line-height: 140px;
@@ -39,15 +21,90 @@
   -o-transition: 0.4s all ease;
   transition: 0.4s all ease;
 }
-.album .imgbox.add-image:hover {
+.album .album-image .add-image:hover {
   color: #1dd2af;
 }
 .album input[type="file"]{
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
   opacity:0;
+}
+/*/////////////////////////////////////////////////gallery image////////////////////////////////////////////////////////////*/
+.album-image{
+  position: relative;
+  display: block;
+  border-radius: 4px;
+}
+.album-image img {
+  width: 100%;
+  height: 150px;
+  border-radius: 4px;
+}
+.album-text{
+  position: absolute;
+  top: 0; right: 0;
+  bottom: 0; left: 0;
+  width: 100%;
+  height: 150px;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: opacity 0.6s;
+  -moz-transition: opacity 0.6s;
+  transition: opacity 0.6s;
+  vertical-align:middle;
+  line-height:200px;
+}
+.album-text:hover{
+  opacity: 1;
+}
+.album-text h3{
+  color: white;
+  line-height: 150px;
+  background-color: rgba(0,0,0,0.8);
+  border-radius: 4px;
+}
+.album-text h3 i:hover {
+  cursor: pointer;
+  color: red;
+}
+/*///////////////////////////////////////////////upload new image////////////////////////////////////////////////////////*/
+#addImageModal form {
+  text-align: center;
+  margin-bottom: 10px;
+}
+#addImageModal label, #addImageModal input {
+  color: #333;
+}
+#addImageModal label {
+  display: inline-block;
+  width: 5em;
+  padding: 0 1em;
+  text-align: right;
+}
+/* Hide the file input using
+opacity */
+#addImageModal [type=file] {
+  filter: alpha(opacity=0);
+  opacity: 0;
+  width: 0;
+  padding: 0;
+}
+#addImageModal input, #addImageModal [type=file] + label {
+  border-radius: 3px;
+  text-align: left;
+  padding: 10px;
+  width: 125px;
+  margin: 0;
+}
+#addImageModal [type=file] + label {
+  text-align: center;
+  background: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+#addImageModal [type=file] + label:hover {
+  background: #3399ff;
 }

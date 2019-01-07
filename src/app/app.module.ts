@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { DpDatePickerModule } from 'ng2-jalali-date-picker';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 import { AppComponent } from './app.component';
 import { TimeComponent } from './Time-app/time/time.component';
@@ -27,6 +28,7 @@ import { PlaceFacilitiesComponent } from './dashboard/place-facilities/place-fac
     HttpClientModule,
     DpDatePickerModule,
     FormsModule,
+    ImageCropperModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
