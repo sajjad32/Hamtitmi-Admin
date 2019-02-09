@@ -2,19 +2,21 @@
   <div id="tasker-header" class="tasker-header">
     <input type="text" id="input-task" placeholder="افزودن به امکانات" autocomplete="off" [(ngModel)]="facility_text">
     <button id="add-task-btn" (click)="addFacility(place_id)">
-      <i class="fa fa-fw fa-plus"></i>
-    </button>
-  </div>
-  <div class="tasker-body">
-    <ul id="tasks">
-      <li class="task" *ngFor="let item of facilities">
-        {{item.text | slice:0:25}}<span *ngIf="item.text.length > 25">...</span>
-        <button class="trash" (click)="removeFacility(place_id, item.id)"><i class="fa fa-trash"></i></button>
-        <button class="edit" data-toggle="modal" data-target="#editFacilityModal" (click)="loadFacility(item)"><i class="fa fa-edit"></i></button>
-      </li>
-    </ul>
-  </div>
+  <i class="fa fa-fw fa-plus" style="position: relative; top: 2px;"></i>
+  </button>
 </div>
+<div class="tasker-body">
+  <ul id="tasks">
+    <li class="task" *ngFor="let item of facilities">
+      {{item.text | slice:0:25}}<span *ngIf="item.text.length > 25">...</span>
+      <button class="trash" (click)="removeFacility(place_id, item.id)"><i class="fa fa-trash"></i></button>
+      <button class="edit" data-toggle="modal" data-target="#editFacilityModal" (click)="loadFacility(item)"><i class="fa fa-edit"></i></button>
+    </li>
+  </ul>
+</div>
+</div>
+
+<app-test></app-test>
 
 
 <div class="modal fade" id="editFacilityModal" tabindex="-1" role="dialog" aria-hidden='true'>

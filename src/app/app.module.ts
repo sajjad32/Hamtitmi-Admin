@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PlaceAlbumComponent } from './dashboard/place-album/place-album.component';
 import { PlaceFacilitiesComponent } from './dashboard/place-facilities/place-facilities.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PlaceFacilitiesComponent } from './dashboard/place-facilities/place-fac
     DashboardComponent,
     PlaceAlbumComponent,
     PlaceFacilitiesComponent,
+    TestComponent,
   ],
   imports: [
     BrowserModule,
