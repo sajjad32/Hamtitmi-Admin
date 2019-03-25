@@ -1,5 +1,4 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import { AlbumService } from './album.service';
 import {ImageCroppedEvent, ImageCropperComponent} from 'ngx-image-cropper';
 import { NotifierService } from 'angular-notifier';
 
@@ -16,7 +15,7 @@ export class PlaceAlbumComponent implements OnInit {
   showCropper = false;
   private readonly notifier: NotifierService;
 
-  constructor(private albumService: AlbumService, notifierService: NotifierService) {
+  constructor(notifierService: NotifierService) {
     this.notifier = notifierService;
   }
 

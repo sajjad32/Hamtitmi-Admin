@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Time} from '../Time';
-import {TimeService} from '../time.service';
+import {TimeService} from '../../../services/time.service';
 import {DatePipe} from '@angular/common';
 import * as moment from 'jalali-moment';
 import {variable} from '@angular/compiler/src/output/output_ast';

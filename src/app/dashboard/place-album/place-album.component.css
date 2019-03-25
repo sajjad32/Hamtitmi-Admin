@@ -10,7 +10,7 @@
 .album .album-image .add-image {
   background-color: transparent;
   text-align: center;
-  line-height: 140px;
+  line-height: 146px;
   font-size: 50px;
   color: #ccc;
   border: 2px dashed #ccc;
@@ -20,6 +20,10 @@
   -ms-transition: 0.4s all ease;
   -o-transition: 0.4s all ease;
   transition: 0.4s all ease;
+}
+.album .album-image .add-image i{
+  top: 4px;
+  position: relative;
 }
 .album .album-image .add-image:hover {
   color: #1dd2af;

@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { FacilityService } from './facility.service';
 import {NgForm} from '@angular/forms';
 
 @Component({
@@ -16,7 +15,7 @@ export class PlaceFacilitiesComponent implements OnInit {
   ];
   facility_text = '';
   facility: any = '';
-  constructor(private facilityService: FacilityService) { }
+  constructor() { }
 
   ngOnInit() {
     this.getFacilities(this.place_id);
