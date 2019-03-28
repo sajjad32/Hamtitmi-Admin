@@ -1,6 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {ImageCroppedEvent, ImageCropperComponent} from 'ngx-image-cropper';
 import { NotifierService } from 'angular-notifier';
+import {AdminService} from '../../_services/admin.service';
+import {Image} from './Image';
 
 @Component({
   selector: 'app-place-album',
@@ -9,19 +11,21 @@ import { NotifierService } from 'angular-notifier';
 })
 export class PlaceAlbumComponent implements OnInit {
 
-  images = [];
+  images = Array(Image);
   imageChangedEvent: any = '';
   croppedImage: any = '';
   showCropper = false;
   private readonly notifier: NotifierService;
 
-  constructor(notifierService: NotifierService) {
+  constructor(notifierService: NotifierService,
+              private adminService: AdminService) {
     this.notifier = notifierService;
   }
 
   @ViewChild(ImageCropperComponent) imageCropper: ImageCropperComponent;
 
   ngOnInit() {
+    this.getImages();
   }
 
   cleanImageUpload() {
@@ -29,7 +33,6 @@ export class PlaceAlbumComponent implements OnInit {
     this.croppedImage = '';
     this.showCropper = false;
   }
-
   fileChangeEvent(event: any): void {
     this.imageChangedEvent = event;
   }
@@ -47,8 +50,41 @@ export class PlaceAlbumComponent implements OnInit {
   loadImageFailed () {
     console.log('Load failed');
   }
-  uploadImage() {
-    console.log(this.croppedImage);
-    this.notifier.notify( 'success', 'تصویر با موفقیت بارگذاری شد' );
+
+  getImages() {
+    this.adminService.getImages().subscribe(
+      data => {
+        this.images = data['data']['place_images'];
+        console.log('get-images response: \n', data);
+      },
+      error => {
+        console.log('get-images response error: \n', error);
+      }
+    );
+  }
+
+  addImage() {
+    this.adminService.addImage(this.croppedImage).subscribe(
+      data => {
+        this.notifier.notify( 'success', 'تصویر با موفقیت بارگذاری شد' );
+        console.log('add-image response: \n', data);
+        this.getImages();
+      },
+      error => {
+        console.log('add-image response error: \n', error);
+      }
+    );
+  }
+
+  removeImage(image_id: string) {
+    this.adminService.removeImage(image_id).subscribe(
+      data => {
+        console.log('remove-image response: \n', data);
+        this.getImages();
+      },
+      error => {
+        console.log('remove-image response error: \n', error);
+      }
+    );
   }
 }

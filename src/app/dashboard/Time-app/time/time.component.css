@@ -45,3 +45,16 @@
   background: #66c000;
   color: #fff;
 }
+.edit-box, .edit-box:hover {
+  background: #ed5d2a !important;
+}
+#input-price {
+  background: transparent;
+  border-bottom: 1px solid #ffebe4;
+  width: 80%;
+  color: #ffebe4;
+  text-align: center;
+}
+.input-price .fa-check {
+  color: #ffebe4 !important;
+}

@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
+import {Facility} from './Facility';
+import {AdminService} from '../../_services/admin.service';
 
 @Component({
   selector: 'app-place-facilities',
@@ -8,47 +10,69 @@ import {NgForm} from '@angular/forms';
 })
 export class PlaceFacilitiesComponent implements OnInit {
 
-  @Input() place_id;
-  facilities = [
-    {'id': 1, 'text': 'مجهز به سیتسم گرمایشی'},
-    {'id': 2, 'text': 'پارکینگ اختصاصی دارد'}
-  ];
-  facility_text = '';
-  facility: any = '';
-  constructor() { }
+  facilities = Array(Facility);
+  new_facility_title = '';
+  edit_facility_title = new Facility();
+  constructor(private adminService: AdminService) { }
 
   ngOnInit() {
-    this.getFacilities(this.place_id);
+    this.getFacilities();
   }
 
-  getFacilities(place_id: number) {
-    // this.facility = this.facilityService.getFacilities(place_id);
+  getFacilities() {
+    this.adminService.getFacilities().subscribe(
+      data => {
+        this.facilities = data['data']['place_facilities'];
+        console.log('get-facilities response: \n', data);
+      },
+      error => {
+        console.log('get-facilities response error: \n', error);
+      }
+    );
   }
 
-  addFacility(place_id: number) {
-    // this.facilityService.addFacility(place_id, facility);
-    if (this.facility_text !== '') {
-      this.facilities.push({'id': 3, 'text': this.facility_text});
-      this.facility_text = '';
+  addFacility() {
+    if (this.new_facility_title !== '') {
+      this.adminService.addFacility(this.new_facility_title).subscribe(
+        data => {
+          console.log('add-facility response: \n', data);
+          this.new_facility_title = '';
+          this.getFacilities();
+        },
+        error => {
+          console.log('add-facility response error: \n', error);
+        }
+      );
     }
   }
 
-  removeFacility(place_id: number, facility_id: number) {
-    // this.facilityService.removeFacility(place_id, facility_id);
-    this.facilities.pop();
+  removeFacility(facility_id: string) {
+    this.adminService.removeFacility(facility_id).subscribe(
+      data => {
+        console.log('remove-facility response: \n', data);
+        this.getFacilities();
+      },
+      error => {
+        console.log('remove-facility response error: \n', error);
+      }
+    );
   }
 
   loadFacility(facility) {
-    this.facility = facility;
+    this.edit_facility_title._id = facility._id;
+    this.edit_facility_title.facility_title = facility.facility_title;
   }
 
-  editFacility(form: NgForm) {
-    this.updateFacility(form);
-  }
-
-  updateFacility(form: NgForm) {
-    const a = form.value;
-    console.log(a);
+  updateFacility() {
+    this.adminService.updateFacility(this.edit_facility_title).subscribe(
+      data => {
+        console.log('update-facility response: \n', data);
+        this.getFacilities();
+      },
+      error => {
+        console.log('update-facility response error: \n', error);
+      }
+    );
   }
 
 }

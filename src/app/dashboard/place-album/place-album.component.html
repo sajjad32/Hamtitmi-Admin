@@ -1,10 +1,10 @@
 <div class="container album-container">
   <div class="album">
     <div class="row">
-      <div class="album-image col-sm-6 col-md-4">
-        <img src="assets/img/park.jpg" />
+      <div class="album-image col-sm-6 col-md-4" *ngFor="let item of images">
+        <img src="{{ item.image_file }}" />
         <div class="album-text col-sm-12 col-md-12">
-          <h3><i class="fa fa-trash"></i></h3>
+          <h3><i class="fa fa-trash" (click)="removeImage(item._id)"></i></h3>
         </div>
       </div>
       <div class="album-image col-sm-6 col-md-4">
@@ -30,7 +30,7 @@
             <image-cropper
               [imageChangedEvent]="imageChangedEvent"
               [maintainAspectRatio]="true"
-              [aspectRatio]="4 / 3"
+              [aspectRatio]="3 / 2"
               [onlyScaleDown]="true"
               [roundCropper]="false"
               format="png"
@@ -43,7 +43,7 @@
               [style.display]="showCropper ? null : 'none'"
             ></image-cropper>
           </div>
-          <button class="btn btn-success" *ngIf="imageChangedEvent" (click)="uploadImage()">بارگذاری</button>
+          <button class="btn btn-success" *ngIf="imageChangedEvent" (click)="addImage()">بارگذاری</button>
         </form>
 
 

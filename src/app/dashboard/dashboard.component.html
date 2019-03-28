@@ -5,16 +5,16 @@
       <div class="col-md-6">
         <div class="profile margin-bottom-0">
           <div class="profile-image">
-            <img src="https://varzeshir.com/uploads/trademarks/property-36.jpg?1541842829">
+            <img src="{{ place['place_image'] }}">
           </div>
           <div class="profile-info">
-            <h3>مجموعه ورزشی هلال احمر</h3>
+            <h3>{{ place['place_name'] }}</h3>
             <a class="logout">
               <i class="fa fa-power-off"></i>
             </a>
-            <span><i class="fa fa-map-marker-alt" style="margin-left: 5px;"></i>زنجان، هنرستان، پلاک 169</span>
+            <span><i class="fa fa-map-marker-alt" style="margin-left: 5px;"></i>{{ place['place_address'] }}</span>
             <app-time-table style="position: relative; display: flex; margin-top: 12px;"></app-time-table>
-            <div class="base-price">قیمت پایه : 50000</div>
+            <div class="base-price">قیمت پایه : {{ place['place_base_price'] }}</div>
           </div>
         </div>
       </div>
@@ -25,7 +25,7 @@
     <div class="divider" style="height: 60px; width: 100%;"></div>
     <div class="row">
       <div class="col-md-4">
-        <app-place-facilities [place_id]="place_id"></app-place-facilities>
+        <app-place-facilities></app-place-facilities>
       </div>
       <div class="col-md-8">
         <app-place-album></app-place-album>

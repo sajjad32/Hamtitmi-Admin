@@ -1,8 +1,7 @@
 export class Time {
-  place_id: number;
-  time: string;
-  date: string;
-  price: number;
-  state?: string;
-  enable?: boolean;
+  time_date: string;
+  time_time: string;
+  time_price: string;
+  time_status: string;
+  time_state?: string;
 }

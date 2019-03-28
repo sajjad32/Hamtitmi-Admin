@@ -32,6 +32,9 @@
   border-radius: 3px;
   z-index: 10;
 }
+#login form {
+  text-align: center;
+}
 #login input {
   text-align: center;
   font-size: 12px;
@@ -61,4 +64,11 @@
 .btn-green:hover, .btn-green:active {
   color: #fff;
   background-color: #2a9e35;
+}
+
+.login-error-msg {
+  color: red;
+  position: relative;
+  top: -10px;
+  font-size: 11px;
 }
