@@ -11,7 +11,7 @@ export class PlaceFinancialComponent implements OnInit {
 
   input_month = '';
   month_name = '';
-  month_income = '';
+  month_income = 0;
   monthes = ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'];
   datePickerConfig = {format: 'YYYY/MM'};
   income_loading = false;

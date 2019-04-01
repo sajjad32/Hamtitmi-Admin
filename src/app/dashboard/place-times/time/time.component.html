@@ -13,7 +13,7 @@
 </div>
 
 <div class="col time-box edit-box" *ngIf="box_edit_state" [ngClass]="{'disable': box_status == 'disable', 'not-reserved': box_status == 'not-reserved', 'reserved': box_status == 'reserved', 'reserving': box_status == 'reserving'}">
-    <input type="text" id="input-price" autocomplete="off" [(ngModel)]="new_price">
+    <input type="number" id="input-price" autocomplete="off" [(ngModel)]="new_price">
     <ul class="time-function-icons input-price">
       <li (click)="updateTime()" *ngIf="new_price !== time.time_price"><i class="fas fa-check"></i></li>
       <li (click)="box_edit_state = false"><i class="fas fa-times"></i></li>

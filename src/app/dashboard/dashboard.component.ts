@@ -10,7 +10,7 @@ import { Place } from './Place';
 export class DashboardComponent implements OnInit {
 
   place = new Place();
-  new_base_price = '';
+  new_base_price = 0;
   change_base_price = false;
 
   constructor(private adminService: AdminService) { }

@@ -13,7 +13,7 @@ export class TimeComponent implements OnChanges, OnInit {
   box_config = {'enable': true, 'reserved': false, 'reserving': false};
   box_status = '';
   box_edit_state = false;
-  new_price = '';
+  new_price = 0;
 
   constructor(private adminService: AdminService) { }
 
@@ -26,16 +26,15 @@ export class TimeComponent implements OnChanges, OnInit {
   }
 
   initTime() {
-    if (this.time.time_status === 'disable') {
-      this.box_config.enable = false;
-    } else if (this.time.time_status === 'enable') {
-      this.box_config.enable = true;
-    }
+    this.box_config.enable = this.time.time_status !== 'disable';
     if (this.time.time_state === '0') {
       this.box_config.reserved = false;
-    } else if (this.time.time_status === 'enable' && this.time.time_state === '1') {
+      this.box_config.reserving = false;
+    } else if (this.time.time_state === '1') {
       this.box_config.reserved = true;
-    } else if (this.time.time_status === 'enable' && this.time.time_state === '2') {
+      this.box_config.reserving = false;
+    } else if (this.time.time_state === '2') {
+      this.box_config.reserved = false;
       this.box_config.reserving = true;
     }
     this.setTimeStatus();
@@ -81,8 +80,8 @@ export class TimeComponent implements OnChanges, OnInit {
         console.log('disable-time response: \n', data);
         if (data['status'] === 200) {
           this.box_config.enable = false;
+          this.setTimeStatus();
         }
-        this.setTimeStatus();
       },
       error => {
         console.log('disable-time response error: \n', error);
@@ -98,8 +97,8 @@ export class TimeComponent implements OnChanges, OnInit {
         console.log('reserve-time response: \n', data);
         if (data['status'] === 200) {
           this.box_config.reserved = true;
+          this.setTimeStatus();
         }
-        this.setTimeStatus();
       },
       error => {
         console.log('reserve-time response error: \n', error);

@@ -4,6 +4,6 @@ export class Place {
   place_phone: string;
   place_sport: number;
   place_image_name?: string;
-  place_base_price: string;
+  place_base_price: number;
   place_address: string;
 }

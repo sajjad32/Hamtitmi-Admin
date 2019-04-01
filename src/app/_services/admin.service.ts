@@ -12,8 +12,7 @@ export class AdminService {
   place_id = '5c992f5fcc9a7b1068001cea';
   // place_id = '';
   place_name = 'مجموعه ورزشی هلال احمر';
-  place_base_price = '35000';
-  // place_id: Observable<any>;
+  place_base_price = 35000;
 
   constructor(private http: HttpClient) { }
 
@@ -21,7 +20,7 @@ export class AdminService {
     const data = {'admin_username': admin.admin_username, 'admin_password': admin.admin_password};
     const req = JSON.stringify({data});
     console.log('login request: \n', JSON.parse(req));
-    const response = this.http.put(this.rootURL + 'login', req, {headers: this.httpHeaders})
+    const response = this.http.put(this.rootURL + 'login', req, {headers: this.httpHeaders});
     response.subscribe(
     r_data => {
       this.place_id = r_data['data']['place_id'];

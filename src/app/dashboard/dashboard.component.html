@@ -20,7 +20,7 @@
             </div>
             <div class="base-price" *ngIf="change_base_price">
               تغییر قیمت به :
-              <input type="text" id="input-price" autocomplete="off" [(ngModel)]="new_base_price">
+              <input type="number" id="input-price" autocomplete="off" [(ngModel)]="new_base_price">
               <i class="fas fa-check" *ngIf="new_base_price !== place.place_base_price" (click)="onSubmitNewBasePrice()"></i>
               <i class="fas fa-times" (click)="change_base_price = false"></i>
             </div>
