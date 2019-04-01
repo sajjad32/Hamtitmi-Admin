@@ -16,9 +16,17 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
 
   onSubmitLogin() {
-    this.msg = this.adminService.login(this.formData);
-    if (this.msg !== '') {
-      this.error = 'نام کاربری یا رمز عبور نادرست میباشد';
+    this.error = '';
+    if (this.formData.admin_username === '' || this.formData.admin_password === null) {
+      this.error = 'حداقل یکی از فیلدها خالی میباشد';
+    } else {
+      this.msg = this.adminService.login(this.formData).subscribe(
+        data => {
+          if (data['status'] !== 200) {
+            this.error = 'نام کاربری یا رمز عبور نادرست میباشد';
+          }
+        }
+      );
     }
   }
 }

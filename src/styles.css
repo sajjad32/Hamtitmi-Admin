@@ -24,3 +24,10 @@ body {
   margin-right: 10px;
   margin-top: -3px;
 }
+dp-date-picker.dp-material .dp-picker-input {
+  font-size: 14px !important;
+}
+dp-date-picker.dp-material .dp-picker-input {
+  border-bottom: 1px solid #75757580;
+  width: auto !important;
+}

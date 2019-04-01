@@ -2,24 +2,30 @@
   <div class="header" style="height: 100px; width: 100%;"></div>
   <div class="wrapper">
     <div class="row row-wider">
-      <div class="col-md-6">
+      <div class="col-md-8">
         <div class="profile margin-bottom-0">
           <div class="profile-image">
-            <img src="{{ place['place_image'] }}">
+            <img src="{{ place['place_image_name'] }}">
           </div>
           <div class="profile-info">
             <h3>{{ place['place_name'] }}</h3>
             <a class="logout">
-              <i class="fa fa-power-off"></i>
+              <i class="fa fa-power-off" (click)="logout()"></i>
             </a>
             <span><i class="fa fa-map-marker-alt" style="margin-left: 5px;"></i>{{ place['place_address'] }}</span>
             <app-time-table style="position: relative; display: flex; margin-top: 12px;"></app-time-table>
-            <div class="base-price">قیمت پایه : {{ place['place_base_price'] }}</div>
+            <div class="base-price" *ngIf="!change_base_price">
+              قیمت پایه : {{ place['place_base_price'] }}
+              <i class="fa fa-edit" (click)="editBasePrice()"></i>
+            </div>
+            <div class="base-price" *ngIf="change_base_price">
+              تغییر قیمت به :
+              <input type="text" id="input-price" autocomplete="off" [(ngModel)]="new_base_price">
+              <i class="fas fa-check" *ngIf="new_base_price !== place.place_base_price" (click)="onSubmitNewBasePrice()"></i>
+              <i class="fas fa-times" (click)="change_base_price = false"></i>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-6">
-
       </div>
     </div>
     <div class="divider" style="height: 60px; width: 100%;"></div>
@@ -29,6 +35,12 @@
       </div>
       <div class="col-md-8">
         <app-place-album></app-place-album>
+      </div>
+      <div class="col-md-12">
+        <app-refactor-multi-days></app-refactor-multi-days>
+      </div>
+      <div class="col-md-7">
+        <app-place-financial></app-place-financial>
       </div>
     </div>
   </div>

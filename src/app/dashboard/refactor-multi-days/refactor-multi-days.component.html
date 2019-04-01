@@ -1,0 +1,61 @@
+<div class="container form-container">
+  <div class="refactor">
+    <div class="row">
+      <div class="col-md-3">
+        <span class="input-label">از تاریخ :</span>
+        <dp-date-picker [config]="datePickerConfig" dir="rtl" [(ngModel)]="formData.from_date" mode="day" placeholder="انتخاب کنید" theme="dp-material"></dp-date-picker>
+      </div>
+      <div class="col-md-3">
+        <span class="input-label">تا تاریخ :</span>
+        <dp-date-picker [config]="datePickerConfig" dir="rtl" [(ngModel)]="formData.to_date" mode="day" placeholder="انتخاب کنید" theme="dp-material"></dp-date-picker>
+      </div>
+      <div class="col-md-3">
+        <span class="input-label">ساعت :</span>
+        <div class="styled-select">
+          <select [ngClass]="{'selected': formData.time_time}" [(ngModel)]="formData.time_time">
+            <option value="" selected disabled hidden>انتخاب کنید</option>
+            <option *ngFor="let time of timesArray" value="{{time}}">{{time}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <span class="input-label">روز هفته :</span>
+        <div class="styled-select">
+          <select [ngClass]="{'selected': formData.day_name}" [(ngModel)]="formData.day_name">
+            <option value="" selected disabled hidden>انتخاب کنید</option>
+            <option *ngFor="let day of daysArray; let i = index" value="{{i}}">{{day.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <span class="input-label">نوع تغییر :</span>
+        <div class="styled-select">
+          <select [ngClass]="{'selected': formData.action}" [(ngModel)]="formData.action">
+            <option value="" selected disabled hidden>انتخاب کنید</option>
+            <option value="disable">غیرفعال کردن</option>
+            <option value="reserve">رزرو کردن</option>
+            <option value="edit">تغییر قیمت</option>
+            <option value="enable">فعال کردن</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-3" *ngIf="formData.action == 'edit'">
+        <span class="input-label">قیمت(تومان) :</span>
+        <div class="styled-input">
+          <input type="number" [(ngModel)]="formData.price" [ngClass]="{'selected': formData.price}" placeholder="وارد کنید">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <span class="form-error-msg">
+          {{error}}
+        </span>
+        {{from_date}}
+      </div>
+      <div class="col-md-12" style="text-align: center;">
+        <button class="btn btn-success do-refactor-btn" type="button" (click)="onSubmitRefactorTimes()">اعمال کن</button>
+      </div>
+    </div>
+  </div>
+</div>

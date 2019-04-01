@@ -1,12 +1,12 @@
 <div class="background">
   <img src="assets/img/login-background.jpg" alt="">
   <div class="page-center-form" id="login">
-    <form #form="ngForm" autocomplete="off" (submit)="form.valid && onSubmitLogin(form)">
+    <form #form="ngForm" autocomplete="off" (submit)="onSubmitLogin(form)">
       <div class="form-group">
-        <input type="text" class="form-control" name="username" [(ngModel)]="formData.admin_username" placeholder="نام کاربری" required>
+        <input type="text" class="form-control" name="username" [(ngModel)]="formData.admin_username" placeholder="نام کاربری">
       </div>
       <div class="form-group">
-        <input type="password" class="form-control" name="password" [(ngModel)]="formData.admin_password" placeholder="رمز عبور" required>
+        <input type="password" class="form-control" name="password" [(ngModel)]="formData.admin_password" placeholder="رمز عبور">
       </div>
       <span class="login-error-msg">
         {{error}}

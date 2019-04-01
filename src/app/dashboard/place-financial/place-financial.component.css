@@ -1,0 +1,30 @@
+.container.form-container {
+  background-color: #fff;
+  color: #35373a;
+  min-height: auto;
+  border-radius: .3rem;
+  margin-bottom: 16px;
+}
+
+.income {
+  padding: 40px;
+}
+
+.input-label {
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+dp-date-picker {
+  width: 60%;
+}
+
+.month-name {
+  font-size: 14px;
+  border-right: 2px solid #1fda6a;
+  padding-right: 10px;
+}
+
+.loading {
+  color: transparent;
+}

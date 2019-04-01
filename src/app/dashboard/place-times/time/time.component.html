@@ -1,0 +1,21 @@
+<div class="col time-box" *ngIf="!box_edit_state" [ngClass]="{'disable': box_status == 'disable', 'enable': box_status == 'enable', 'reserved': box_status == 'reserved', 'reserving': box_status == 'reserving'}">
+    <b class="time-price" *ngIf="box_status === 'disable'">غیر فعال</b>
+    <b class="time-price" *ngIf="box_config['enable']">
+      <span *ngIf="time.time_price">{{time.time_price}}</span>
+    </b>
+    <ul class="time-function-icons">
+      <li *ngIf="box_status == 'enable'" (click)="reserveTime()"><i class="fa fa-shopping-cart"></i></li>
+      <li *ngIf="box_status == 'enable'" (click)="enableEditState()"><i class="fa fa-edit"></i></li>
+      <li *ngIf="box_status == 'disable'" (click)="enableTime()"><i class="fa fa-play"></i></li>
+      <li *ngIf="box_status == 'enable'" (click)="disableTime()"><i class="fa fa-power-off"></i></li>
+      <img *ngIf="box_status == 'reserving'" class="loading-img" src="assets/loading.gif" alt="">
+    </ul>
+</div>
+
+<div class="col time-box edit-box" *ngIf="box_edit_state" [ngClass]="{'disable': box_status == 'disable', 'not-reserved': box_status == 'not-reserved', 'reserved': box_status == 'reserved', 'reserving': box_status == 'reserving'}">
+    <input type="text" id="input-price" autocomplete="off" [(ngModel)]="new_price">
+    <ul class="time-function-icons input-price">
+      <li (click)="updateTime()" *ngIf="new_price !== time.time_price"><i class="fas fa-check"></i></li>
+      <li (click)="box_edit_state = false"><i class="fas fa-times"></i></li>
+    </ul>
+</div>

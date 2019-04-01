@@ -28,11 +28,11 @@
   color: #ccc;
   border: 1px dashed #ddd;
 }
-.time-box.not-reserved {
+.time-box.enable {
   background: #ffebe4;
   color: #ed5d2a;
 }
-.time-box.not-reserved:hover, .time-box.not-reserved.active {
+.time-box.enable:hover, .time-box.enable.active {
   background: #ed5d2a;
   color: #fff;
 }
@@ -45,6 +45,10 @@
   background: #66c000;
   color: #fff;
 }
+.time-box.reserving {
+  color: #66c000;
+  background: #ecffe6;
+}
 .edit-box, .edit-box:hover {
   background: #ed5d2a !important;
 }
@@ -55,6 +59,12 @@
   color: #ffebe4;
   text-align: center;
 }
-.input-price .fa-check {
+.input-price .fas {
   color: #ffebe4 !important;
+}
+.loading-img {
+  top: -1px;
+  z-index: 5;
+  position: relative;
+  width: 25px;
 }

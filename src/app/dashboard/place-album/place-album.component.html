@@ -2,9 +2,9 @@
   <div class="album">
     <div class="row">
       <div class="album-image col-sm-6 col-md-4" *ngFor="let item of images">
-        <img src="{{ item.image_file }}" />
+        <img src="{{ item.image_name }}" />
         <div class="album-text col-sm-12 col-md-12">
-          <h3><i class="fa fa-trash" (click)="removeImage(item._id)"></i></h3>
+          <h3><i class="fa fa-trash" (click)="removeImage(item.image_name, item._id)"></i></h3>
         </div>
       </div>
       <div class="album-image col-sm-6 col-md-4">

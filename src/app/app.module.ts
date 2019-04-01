@@ -7,12 +7,14 @@ import { ImageCropperModule } from 'ngx-image-cropper';
 import { NotifierModule } from 'angular-notifier';
 
 import { AppComponent } from './app.component';
-import { TimeComponent } from './dashboard/Time-app/time/time.component';
-import { TimeTableComponent } from './dashboard/Time-app/time-table/time-table.component';
+import { TimeComponent } from './dashboard/place-times/time/time.component';
+import { TimeTableComponent } from './dashboard/place-times/time-table/time-table.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PlaceAlbumComponent } from './dashboard/place-album/place-album.component';
 import { PlaceFacilitiesComponent } from './dashboard/place-facilities/place-facilities.component';
+import { RefactorMultiDaysComponent } from './dashboard/refactor-multi-days/refactor-multi-days.component';
+import { PlaceFinancialComponent } from './dashboard/place-financial/place-financial.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { PlaceFacilitiesComponent } from './dashboard/place-facilities/place-fac
     DashboardComponent,
     PlaceAlbumComponent,
     PlaceFacilitiesComponent,
+    RefactorMultiDaysComponent,
+    PlaceFinancialComponent,
   ],
   imports: [
     BrowserModule,

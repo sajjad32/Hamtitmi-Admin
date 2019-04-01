@@ -76,8 +76,8 @@ export class PlaceAlbumComponent implements OnInit {
     );
   }
 
-  removeImage(image_id: string) {
-    this.adminService.removeImage(image_id).subscribe(
+  removeImage(image_name: string, image_id: string) {
+    this.adminService.removeImage(image_name, image_id).subscribe(
       data => {
         console.log('remove-image response: \n', data);
         this.getImages();

@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-success show-times-btn" data-toggle="modal" data-target="#reserveTableModal" (click)="createReservationTable()">
+<button type="button" class="btn btn-success show-times-btn" data-toggle="modal" data-target="#reserveTableModal" (click)="comeToday()">
   مشاهده سانس ها
 </button>
 
@@ -13,8 +13,11 @@
         </div>
       </div>
       <div class="modal-body">
+        <div class="loading" [ngClass]="{'hide': !loading}">
+          <i class="fa fa-circle-notch fa-spin fa-3x fa-fw"></i>
+        </div>
         <div class="reserveTable ">
-          <div class="reservePage active" *ngIf="times">
+          <div class="reservePage active">
             <div class="row headRow">
               <div class="col headCol"></div>
               <div class="col" *ngFor="let day of days">
@@ -25,13 +28,9 @@
             </div>
             <div class="row" *ngFor="let item of timesArray; let i = index">
               <div class="col headCol">{{item}}</div>
-              <app-time [time]="times[0 + i]"></app-time>
-              <app-time [time]="times[16 + i]"></app-time>
-              <app-time [time]="times[32 + i]"></app-time>
-              <app-time [time]="times[48 + i]"></app-time>
-              <app-time [time]="times[64 + i]"></app-time>
-              <app-time [time]="times[80 + i]"></app-time>
-              <app-time [time]="times[96 + i]"></app-time>
+              <ng-container *ngIf="times">
+                <app-time *ngFor="let day of days; let j = index" [time]="times[(j * 16) + i]"></app-time>
+              </ng-container>
               <!--<div class="col late pastDate">تاریخ گذشته</div>-->
               <div class="clear"></div>
             </div>

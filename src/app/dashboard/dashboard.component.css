@@ -71,8 +71,18 @@ b, strong {
   background-color: #e0e0e0;
   border: 1px solid #e0e0e0;
   border-radius: .25rem;
-  bottom: 32px;
+  bottom: 31px;
   position: absolute;
   left: 0;
   font-size: 12px;
+}
+.profile .profile-info .base-price i {
+  cursor: pointer;
+  padding: 2px 5px;
+}
+.profile .profile-info .base-price input {
+  width: 50px;
+  background: transparent;
+  color: #1c8b41;
+  padding-right: 3px;
 }
