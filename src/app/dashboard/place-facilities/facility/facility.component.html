@@ -1,0 +1,13 @@
+<li class="task" *ngIf="!is_deleted" [ngClass]="{'edit_state': edit_state}">
+  <ng-container *ngIf="!edit_state">
+    {{facility.facility_title | slice:0:25}}<span *ngIf="facility.facility_title?.length > 25">...</span>
+    <button class="trash"><i class="fa fa-trash" (click)="removeFacility(facility._id)"></i></button>
+    <button class="edit" (click)="toggleEditState()"><i class="fa fa-edit"></i></button>
+  </ng-container>
+
+  <ng-container *ngIf="edit_state">
+    <input type="text" id="input-facility" autocomplete="off" [(ngModel)]="edited_facility.facility_title">
+    <button class="cancel"><i class="fas fa-times" (click)="toggleEditState()"></i></button>
+    <button class="check"><i class="fas fa-check" (click)="updateFacility()"></i></button>
+  </ng-container>
+</li>

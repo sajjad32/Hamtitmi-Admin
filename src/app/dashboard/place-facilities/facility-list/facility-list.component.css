@@ -18,7 +18,7 @@
   font-size: 1.25em;
   padding: 14px;
 }
-.tasker ul, .tasker li, .tasker .error, .tasker button, .tasker input {
+.tasker ul, .tasker .error, .tasker button, .tasker input {
   margin: 0;
   padding: 0;
   border: none;
@@ -41,47 +41,18 @@
   font-size: 1.25em;
   padding: 10px 14px;
 }
-.tasker-header button, .tasker-body .task button {
+.tasker-header button {
   transition: all 0.2s ease;
   -webkit-transition: all 0.2s ease;
   cursor: pointer;
 }
-.tasker-body .task {
-  display: block;
-  position: relative;
-  padding: 14px 40px 14px 14px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  font-size: 15px;
-}
-.tasker-body .task:nth-child(even) {
+#tasks:nth-child(even) {
   background-color: #eee;
 }
-.tasker-body .task:last-child {
+#tasks:last-child {
   border-bottom-left-radius: .25rem;
   border-bottom-right-radius: .25rem;
 }
-.tasker-body .task button {
-  margin: 14px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.5;
-  color: #aaa;
-}
-.tasker-body .task .edit {
-  left: 24px !important;
-}
-.tasker-body .task button:hover {
-  opacity: 1;
-}
-.tasker-body .task button:hover .fa-trash {
-  color: #ed1c24;
-}
-.tasker-body .task button:hover .fa-edit {
-  color: #0069d9;
-}
-
 .input-group-prepend {
   margin-left: -1px;
 }

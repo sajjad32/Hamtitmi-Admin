@@ -131,6 +131,13 @@ export class AdminService {
     return this.http.put(this.rootURL + 'reserve-time', req, {headers: this.httpHeaders});
   }
 
+  disableReserve(time): Observable<any> {
+    const data = time;
+    const req = JSON.stringify({data});
+    console.log('disable-reserve request: \n', JSON.parse(req));
+    return this.http.put(this.rootURL + 'disable-reserve', req, {headers: this.httpHeaders});
+  }
+
   getMonthIncome(month): Observable<any> {
     const data = {'place_id': this.place_id, 'month_date': month};
     const req = JSON.stringify({data});

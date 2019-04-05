@@ -5,7 +5,7 @@
   border-radius: .3rem;
 }
 .album {
-  padding: 40px;
+  padding: 40px 40px 25px;
 }
 .album .album-image .add-image {
   background-color: transparent;

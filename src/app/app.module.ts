@@ -12,9 +12,10 @@ import { TimeTableComponent } from './dashboard/place-times/time-table/time-tabl
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PlaceAlbumComponent } from './dashboard/place-album/place-album.component';
-import { PlaceFacilitiesComponent } from './dashboard/place-facilities/place-facilities.component';
 import { RefactorMultiDaysComponent } from './dashboard/refactor-multi-days/refactor-multi-days.component';
 import { PlaceFinancialComponent } from './dashboard/place-financial/place-financial.component';
+import { FacilityListComponent } from './dashboard/place-facilities/facility-list/facility-list.component';
+import { FacilityComponent } from './dashboard/place-facilities/facility/facility.component';
 
 @NgModule({
   declarations: [
@@ -24,9 +25,10 @@ import { PlaceFinancialComponent } from './dashboard/place-financial/place-finan
     LoginComponent,
     DashboardComponent,
     PlaceAlbumComponent,
-    PlaceFacilitiesComponent,
     RefactorMultiDaysComponent,
     PlaceFinancialComponent,
+    FacilityListComponent,
+    FacilityComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,54 @@
+li, button, input {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.task button {
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  cursor: pointer;
+}
+.task {
+  display: block;
+  position: relative;
+  padding: 14px 40px 14px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  font-size: 15px;
+}
+.task.edit_state {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+}
+.task.edit_state input {
+  padding: 10px 36px 10px 0;
+  margin: 4px 4px 4px 0;
+  background: #f2f2f2;
+  width: 293px;
+}
+.task button {
+  margin: 14px;
+  position: absolute;
+  top: 0;
+  left: -4px;
+  opacity: 0.5;
+  color: #aaa;
+}
+.task .edit, .task .check {
+  left: 19px !important;
+}
+.task button:hover {
+  opacity: 1;
+}
+button:hover .fa-trash, button:hover .fa-times {
+  color: #ed1c24;
+}
+button:hover .fa-edit {
+  color: #0069d9;
+}
+button:hover .fa-check {
+  color: #3cb848;
+}

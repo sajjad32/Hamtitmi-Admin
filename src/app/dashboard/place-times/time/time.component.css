@@ -45,6 +45,9 @@
   background: #66c000;
   color: #fff;
 }
+.time-box.reserved.from-admin {
+  line-height: 30px;
+}
 .time-box.reserving {
   color: #66c000;
   background: #ecffe6;
@@ -62,11 +65,21 @@
 .input-price .fas {
   color: #ffebe4 !important;
 }
-.loading-img {
+.reserving .loading-img {
   top: -1px;
   z-index: 5;
   position: relative;
   width: 25px;
+}
+.reserving:hover .loading-img {
+  display: none;
+}
+.reserving #players-num {
+  font-size: 14px;
+  display: none;
+}
+.reserving:hover #players-num {
+  display: block;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

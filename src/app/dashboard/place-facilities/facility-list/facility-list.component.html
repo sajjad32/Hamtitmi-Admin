@@ -1,0 +1,13 @@
+<div id="tasker" class="tasker">
+  <div id="tasker-header" class="tasker-header">
+    <input type="text" id="input-task" placeholder="افزودن به امکانات" autocomplete="off" [(ngModel)]="new_facility_title">
+    <button id="add-task-btn" (click)="addFacility()">
+      <i class="fa fa-fw fa-plus" style="position: relative; top: 2px;"></i>
+    </button>
+  </div>
+  <div class="tasker-body">
+    <ul id="tasks">
+      <app-facility *ngFor="let facility of facilities" [facility]="facility"></app-facility>
+    </ul>
+  </div>
+</div>
